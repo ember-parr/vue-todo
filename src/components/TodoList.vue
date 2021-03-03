@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div>
     <h2>You have {{ itemsRemaining.length }} tasks left for today</h2>
@@ -18,25 +19,27 @@ export default {
     };
   },
   methods: {
-      handleStatusChange(item) {
-          item.complete = !item.complete;
-          console.log(item);
-      }
+    handleStatusChange(item) {
+      item.complete = !item.complete;
+      console.log(item);
+    }
   },
   computed: {
-      itemsRemaining() {
-          return this.todos.filter(t => !t.complete)
-      }
+    itemsRemaining() {
+      return this.todos.filter(t => !t.complete);
+    }
   }
 };
 </script>
 
 <style scoped>
 .todoList {
-  display: flex;
+  display: inline-flex;
   justify-content: space-evenly;
+  align-content: flex-start;
 }
 h2 {
   color: teal;
+  opacity: 0.75;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/GetItDone.png" />
+  <div id="app" >
+    <h1>Let's Get Things Done</h1>
+    <img className="headerImg" alt="checkmark" src="./assets/check-favicon.png" />
     <todo-list />
   </div>
 </template>
@@ -23,11 +24,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-image: url(assets/background.jpg);
+  background-repeat: repeat-y;
 }
 
 #app img {
-  width: 80%;
+  width: 150px;
   height: auto;
+}
+#app h1 {
+  padding-top: 50px;
 }
 </style>
