@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>{{ todo.name }} </h3>
-        <button @click="handleClick" class="btnComplete">Done</button>
+        <button @click="handleClick" :class="{ completed: todo.complete }">{{ taskStatus }}</button>
     </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
             this.$emit("status-change", this.todo);
         },
     },
+    computed: {
+        taskStatus() {
+            return this.todo.complete ? "Mark Incomplete" : "Done!";
+        }
+    }
 };
 </script>
 
@@ -32,15 +37,12 @@ export default {
         margin-bottom: 20px;
         color: white;
         border-radius: 12px;
-    }
-
-    .btnComplete {
         background-color: teal;
         border: teal;
     }
 
-    .btnIncomplete {
-        background-color: maroon;
-        border: maroon;
+    .completed {
+        background-color: darkgray;
+        border: darkgray;
     }
 </style>
