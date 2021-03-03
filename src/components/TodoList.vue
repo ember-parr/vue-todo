@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Hey, Ember.... Do This Stuff Today.</h2>
+        <h2>You have XXXX tasks left for today</h2>
     </div>
 </template>
 
