@@ -4,11 +4,22 @@
     </div>
 </template>
 
-<script>
-    export default {
 
-    }
+
+
+<script>
+import { todoItems } from "../data";
+export default {
+    data() {
+        return {
+            todos: [...todoItems],
+        };
+    },
+};
 </script>
+
+
+
 
 <style scoped>
     h2 {
