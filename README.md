@@ -1,5 +1,6 @@
 # todo
-
+My first application writen with VUE  
+[View Deployed App Here!](https://embertasks.app/)
 ## Project setup
 ```
 npm install
