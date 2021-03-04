@@ -2,7 +2,7 @@
 <template>
   <div>
     <h2>You have {{ itemsRemaining.length }} tasks left for today</h2>
-    <div v-for="item in todos" :key="item.id" class="todoList">
+    <div v-for="item in sortedTasks" :key="item.id" class="todoList">
       <todo-item :todo="item" @status-change="handleStatusChange" />
     </div>
   </div>
@@ -11,6 +11,7 @@
 <script>
 import { todoItems } from "../data";
 import TodoItem from "./TodoItem.vue";
+import _ from "lodash";
 export default {
   components: { TodoItem },
   data() {
@@ -27,6 +28,9 @@ export default {
   computed: {
     itemsRemaining() {
       return this.todos.filter(t => !t.complete);
+    },
+    sortedTasks() {
+      return _.orderBy(this.todos, 'complete')
     }
   }
 };
